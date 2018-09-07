@@ -1,3 +1,6 @@
+#include "interface.hpp"
+#include "genMath.hpp"
+
 #include <iostream>
 
 int main()
@@ -7,7 +10,7 @@ int main()
   bool quit = false;
   while(!quit)
   {
-    std::cout << "Enter the number corresponding to what you want to train"
+    std::cout << "Enter the number corresponding to what you want to train."
               << std::endl
               << "--------------------------------------------------------"
               << std::endl
@@ -19,25 +22,29 @@ int main()
     
     std::cin >> choice;
     std::cin.clear();
-    std::cin.ignore();
+    std::cin.ignore(1024,'\n');
    
     while(choice.length() != 1)
     {
-      std::cout << "Do not enter more than one character, please. Try again"
+      std::cout << "Do not enter more than one character, please. Try again."
                 << std::endl;
       std::cin >> choice;
       std::cin.clear();
-      std::cin.ignore();
+      std::cin.ignore(1024, '\n');
     }
 
     char choice_char = choice.at(0);
     switch(choice_char)
     {
-      
       case '1':
+      {
         std::cout << "Math option selected" << std::endl;
-        // TODO call math option function
+        genMath math;
+        genMath* math_ptr = &math;
+        interface<genMath*> math_io(math_ptr);
+        math_io.start();
         break;
+      }
 
       case 'q':  // Ascii for 'q' -> quit
         std::cout << "Quiting SkillTrainer. Thanks for playing!" << std::endl;
