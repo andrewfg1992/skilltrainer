@@ -8,12 +8,8 @@ Linux build instructions:
 on Ubuntu:
 sudo apt-get install cmake 
 
-2) run the following cmds from the toplevel of skilltrainer
-
-mkdir build
-cd build
-cmake ..
-make
+2) run ./linux_build_script.sh
 
 3) to run the program, run:
+cd build
 ./skilltrainer
