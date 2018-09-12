@@ -6,24 +6,11 @@ class interface
   // Constructor
   interface(gen_ptr gp);
 
-  // Starts interface for problem and solution I/O
-  void start();
-
-  // Stops interface loop
-  void stop();
-  
-  // Member variables
-  bool m_continue;     // Stops I/O interface if false
+  // Starts starts user I/O for game. User input can break loop
+  void play();
 
   private:
 
-  // Get user input
-  void getInput();
-
-  // Evaluate user input against known solution
-  // Returns true if answer is correct, false otherwise
-  bool isCorrect();
-
   // Member variables
-  void* m_gen_ptr;  // Pointer to generator obj
+  gen_ptr m_gen_ptr;  // Pointer to generator obj
 };

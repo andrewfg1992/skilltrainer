@@ -42,7 +42,7 @@ int main()
         genMath math;
         genMath* math_ptr = &math;
         interface<genMath*> math_io(math_ptr);
-        math_io.start();
+        math_io.play();
         break;
       }
 
