@@ -13,3 +13,6 @@ sudo apt-get install cmake
 3) to run the program, run:
 cd build
 ./skilltrainer
+
+TODO:
+Change from using templates to an inheritance-based solution
